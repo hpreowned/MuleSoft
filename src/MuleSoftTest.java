@@ -1,9 +1,11 @@
-package test.java;
 
+
+import org.junit.After;
+import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+//import org.testng.annotations.AfterMethod;
+//import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import test.java.API.TShirtOrdering;
@@ -14,6 +16,7 @@ import test.java.PageObject.AddAPIPage;
 import test.java.PageObject.EndPointPage;
 import test.java.PageObject.MuleSoftOptionsPage;
 import test.java.PageObject.SignInPage;
+import test.java.PageObject.SignUpPage;
 import test.java.PageObject.WindowsManage;
 
 
@@ -30,18 +33,18 @@ public class MuleSoftTest {
 	public String Password="Password2";
 	
 		
-	@BeforeMethod
+	/*@Before
 	public void MSTest (){
 		WindowsManage WindowManage= new WindowsManage();
 		driver=WindowManage.getAndOpenWindows(URL);
 		}
 	
-	@AfterMethod
+	@After
 	public void EndTest(){
 		driver.close();
 	}
 	
-	/*@Test(enabled=false)
+	@Test(enabled=false)
 	public void SignUp(){
 		SignInPage signInPage= new SignInPage(driver); 
 		signInPage.SignUpOption();
@@ -81,7 +84,7 @@ public class MuleSoftTest {
 		EndPointPage endPointPage=new EndPointPage(driver);
 		urlAPI=endPointPage.EndPointConfigure();
 		Assert.assertEquals(apiConfigurationPage.StatusEndPoint(), true);
-	}*/
+	}
 	
 	@Test(enabled=false)
 	public void APITest(){
@@ -110,6 +113,6 @@ public class MuleSoftTest {
 		urlAPI=endPointPage.EndPointConfigure();
 		TShirtOrdering tShirtOrdering=new TShirtOrdering();
 		tShirtOrdering.getTShirtCount(urlAPI);
-		}
+		}*/
 	
 }
