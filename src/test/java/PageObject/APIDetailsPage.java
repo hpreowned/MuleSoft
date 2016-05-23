@@ -1,4 +1,4 @@
-package PageObject;
+package test.java.PageObject;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -47,9 +47,13 @@ private WebDriver driver;
 		return driver.findElement(By.cssSelector("i.fa.fa-check"));
 	}
 	
+	private WebElement getAPIAdministrationLink(){
+		return driver.findElement(By.linkText("API administration"));
+	}
+	
 	public boolean APIDetail() throws InterruptedException{
 		getImportRAML().click();
-		getFileRAML().sendKeys("C:\\Users\\Liliana Vivas\\workspace\\MuleSoft\\api.raml");//"C:\\Users\\lvivasa\\workspace\\MuleSoft\\api.raml");
+		getFileRAML().sendKeys("C:\\Users\\lvivasa\\workspace\\MuleSoft\\api.raml");//("C:\\Users\\Liliana Vivas\\workspace\\MuleSoft\\api.raml");"C:\\Users\\lvivasa\\workspace\\MuleSoft\\api.raml");
 		getImportButton().click();
 		getReplaceButton().click();
 		getSleep(1000);
@@ -60,6 +64,7 @@ private WebDriver driver;
 		return getSaveStatus().isDisplayed();
 	}
 	
-	
-	
+	public void APIAdministration(){
+		getAPIAdministrationLink().click();
+	}
 }

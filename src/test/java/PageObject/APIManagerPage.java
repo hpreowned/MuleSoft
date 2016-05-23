@@ -1,4 +1,4 @@
-package PageObject;
+package test.java.PageObject;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;

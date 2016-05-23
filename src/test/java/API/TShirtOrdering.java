@@ -1,4 +1,4 @@
-package API;
+package test.java.API;
 
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
@@ -7,7 +7,7 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
-import Model.Product;
+import test.java.Model.Product;
 
 public class TShirtOrdering {
 		
@@ -18,8 +18,8 @@ public class TShirtOrdering {
 		HttpHeaders headers = new HttpHeaders();
 		HttpEntity<Product> httpEntity = new HttpEntity<Product>(headers);
 		
-		//System.setProperty("proxyHost", "10.10.10.66");
-		//System.setProperty("proxyPort", "8080");
+		System.setProperty("proxyHost", "10.10.10.66");
+		System.setProperty("proxyPort", "8080");
 		
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		

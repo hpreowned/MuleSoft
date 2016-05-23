@@ -1,4 +1,4 @@
-package PageObject;
+package test.java.PageObject;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -30,9 +30,9 @@ private WebDriver driver;
 	}
 	
 	public String EndPointConfigure() throws InterruptedException{
+		getSleep(1000);
 		String endPoint=getEndPointName().getAttribute("value");
 		getMoveScroll();
-		getSleep(1000);
 		getSaveEndPoint().click();
 		return endPoint;
 	}

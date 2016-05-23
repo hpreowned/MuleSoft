@@ -1,4 +1,4 @@
-package Model;
+package test.java.Model;
 
 public class Product {
 
