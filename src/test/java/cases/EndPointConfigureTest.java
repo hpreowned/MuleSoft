@@ -1,7 +1,7 @@
 package test.java.cases;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.AssertJUnit;
+import static org.junit.Assert.*;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -50,7 +50,7 @@ public class EndPointConfigureTest {
 	public void the_EndPoint_should_be_update_succesfully(boolean arg1) throws Throwable {
 		this.update=arg1;
 		APIConfigurationPage apiConfigurationPage=new APIConfigurationPage(driver);
-		AssertJUnit.assertEquals(update, apiConfigurationPage.StatusEndPoint());
+		assertEquals(update, apiConfigurationPage.StatusEndPoint());
 		driver.close();
 	}
 

@@ -1,7 +1,8 @@
 package test.java.cases;
 
+
 import org.openqa.selenium.WebDriver;
-import org.testng.AssertJUnit;
+import static org.junit.Assert.*;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -51,7 +52,7 @@ public class APIAddTest {
 	public void the_API_should_be_created_succesfully(boolean arg1) throws Throwable {
 		this.create=arg1;
 		APIDetailsPage apiDetailsPage= new APIDetailsPage(driver);
-		AssertJUnit.assertEquals(create, apiDetailsPage.APIDetail());
+		assertEquals(create, apiDetailsPage.APIDetail());
 		driver.close();
 	}
 

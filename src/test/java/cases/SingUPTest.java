@@ -1,8 +1,7 @@
 package test.java.cases;
 
 import org.openqa.selenium.WebDriver;
-import org.testng.Assert;
-
+import static org.junit.Assert.*;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -49,7 +48,7 @@ public class SingUPTest {
 	public void the_API_should_display_the_profileInicial(String arg1) throws Throwable {
 		this.profileInicial=arg1;
 		MuleSoftOptionsPage muleSoftOptionsPage= new MuleSoftOptionsPage(driver);
-		Assert.assertEquals(muleSoftOptionsPage.ProfileInicial(), profileInicial);	
+		assertEquals(muleSoftOptionsPage.ProfileInicial(), profileInicial);	
 		driver.close();
 	}
 	

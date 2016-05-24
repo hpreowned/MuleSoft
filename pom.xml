@@ -21,21 +21,12 @@
     	<groupId>info.cukes</groupId>
     		<artifactId>cucumber-java</artifactId>
     		<version>1.2.4</version>
-   </dependency>
-   <dependency>
-    	<groupId>info.cukes</groupId>
-    		<artifactId>cucumber-testng</artifactId>
-    		<version>1.1.5</version>
-   </dependency>
+    		<scope>test</scope>
+     </dependency>
   	<dependency>
   		<groupId>org.seleniumhq.selenium</groupId>
   		<artifactId>selenium-java</artifactId>
   		<version>2.53.0</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>org.testng</groupId>
-  		<artifactId>testng</artifactId>
-  		<version>6.8</version>
   	</dependency>
   	<dependency>
   		<groupId>org.springframework.boot</groupId>
@@ -46,12 +37,12 @@
   		<groupId>info.cukes</groupId>
   		<artifactId>cucumber-junit</artifactId>
   		<version>1.2.4</version>
+  		<scope>test</scope>
   	</dependency>
   	<dependency>
 		<groupId>junit</groupId>
 		<artifactId>junit</artifactId>
 		<version>4.11</version>
-		<scope>test</scope>
 	</dependency>
  </dependencies>
   
