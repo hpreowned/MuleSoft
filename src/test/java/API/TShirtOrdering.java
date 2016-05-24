@@ -21,8 +21,8 @@ public class TShirtOrdering {
 		HttpHeaders headers = new HttpHeaders();
 		HttpEntity<Product> httpEntity = new HttpEntity<Product>(headers);
 		
-		System.setProperty("proxyHost", "10.10.10.66");
-		System.setProperty("proxyPort", "8080");
+		//System.setProperty("proxyHost", "10.10.10.66");
+		//System.setProperty("proxyPort", "8080");
 		
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		
