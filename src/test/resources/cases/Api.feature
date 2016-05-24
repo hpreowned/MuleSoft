@@ -1,13 +1,13 @@
 Feature: Test API 
 
-Scenario Outline: SingUp Test 
+Scenario Outline: SignUp Test 
 	Given the fullName <fullName>,the email <email>,the telephone <telephone>,the organization <organization>,the userName <userName> and the <password> password 
- 	When test the SingUp 
+ 	When test the SignUp 
  	Then the API should display the profileInicial<profileInicial> 
  	 
- 	Examples: Happy SingUP 
+ 	Examples: Happy SignUP 
  		| fullName         | email	                    | telephone		| organization  |  userName    |  password    | profileInicial|
- 		| "Liliana Vivas"  | "lilianavivas@gmail.com"	| "3154519157"	| "PSL"         |  "lvivas50"  |  "Password2" |"LV"           |
+ 		| "Liliana Vivas"  | "lilianavivas@gmail.com"	| "3154519157"	| "PSL"         |  "lvivas90"  |  "Password2" |"LV"           |
 		
 
 Scenario Outline: APIAdd Test 
@@ -17,7 +17,7 @@ Scenario Outline: APIAdd Test
  	 
  	Examples: Happy APIAdd 
  		| userName       | password	    | APIName		| APIVersion    |  create      |
- 		| "lvivasa5"     | "Password2"	| "APINameAdd50"	| "APIVersion"  |  "true"  |		
+ 		| "lvivasa5"     | "Password2"	| "APINameAdd90"	| "APIVersion"  |  "true"  |		
 
 
 Scenario Outline: EndPointConfiguration Test 
@@ -47,4 +47,4 @@ Scenario Outline: APIEndToEnd Test
  	 
  	Examples: Happy APIEndToEnd
  		| userName       | password	    | APIName		| APIVersion    |  products|
- 		| "lvivasa5"     | "Password2"	| "APINameE2E50"| "APIVersion"  |  "S" 	   |
+ 		| "lvivasa5"     | "Password2"	| "APINameE2E90"| "APIVersion"  |  "S" 	   |

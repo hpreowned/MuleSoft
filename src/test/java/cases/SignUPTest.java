@@ -11,7 +11,7 @@ import test.java.PageObject.SignInPage;
 import test.java.PageObject.SignUpPage;
 import test.java.PageObject.WindowsManage;
 
-public class SingUPTest {
+public class SignUPTest {
 	public WebDriver driver;
 	private String URL="http://anypoint.mulesoft.com";
 	public String fullName;
@@ -32,7 +32,7 @@ public class SingUPTest {
 		this.password=arg6;	    
 	}
 
-	@When("^test the SingUp$")
+	@When("^test the SignUp$")
 	public void test_the_SingUp() throws Throwable {
 		WindowsManage WindowManage= new WindowsManage();
 		driver=WindowManage.getAndOpenWindows(URL);
