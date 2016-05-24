@@ -1,11 +1,8 @@
 
-
-import org.junit.After;
-import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-//import org.testng.annotations.AfterMethod;
-//import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import test.java.API.TShirtOrdering;
@@ -24,22 +21,28 @@ import test.java.PageObject.WindowsManage;
 public class MuleSoftTest {
 	public WebDriver driver;
 	private String URL="http://anypoint.mulesoft.com";
-	private String urlAPI;
+	private String urlAPI="https://mocksvc.mulesoft.com/mocks/a99da2a5-3b9e-4a83-b0a4-bd25dedd98f2/";
+	private String urlAPInew;
 	public String mgs;
-	public String NameAPI="NameAPI40";
-	public String VersionAPI="Version";
-	private String ProfileInicial="LV";
-	public String UserName="lvivasa5";
-	public String Password="Password2";
+	public String nameAPI="NameAPI40";
+	public String versionAPI="Version";
+	private String profileInicial="LV";
+	public String userName="lvivasa5";
+	public String password="Password2";
+	public String fullName="Liliana Vivas";
+	public String email="lilianavivas@gmail.com";
+	public String telephone="3154519157";
+	public String organization="PSL"; 
+
 	
 		
-	/*@Before
+	@BeforeTest
 	public void MSTest (){
 		WindowsManage WindowManage= new WindowsManage();
 		driver=WindowManage.getAndOpenWindows(URL);
 		}
 	
-	@After
+	@AfterTest
 	public void EndTest(){
 		driver.close();
 	}
@@ -49,22 +52,22 @@ public class MuleSoftTest {
 		SignInPage signInPage= new SignInPage(driver); 
 		signInPage.SignUpOption();
 		SignUpPage signUpPage= new SignUpPage(driver);
-		signUpPage.SignUp("Liliana Vivas", "lilianavivas@gmail.com", "3154519157", "PSL", UserName, Password);
+		signUpPage.SignUp(fullName, email, telephone, organization, userName, password);
 		MuleSoftOptionsPage muleSoftOptionsPage= new MuleSoftOptionsPage(driver);
 		muleSoftOptionsPage.APIManagerOptions();
-		Assert.assertEquals(muleSoftOptionsPage.ProfileInicial(), ProfileInicial);
+		Assert.assertEquals(muleSoftOptionsPage.ProfileInicial(), profileInicial);
 	}
 	
 	@Test(enabled=false)
 	public void APIAdd() throws InterruptedException{
 		SignInPage signInPage= new SignInPage(driver); 
-		signInPage.signIn(UserName, Password);
+		signInPage.signIn(userName, password);
 		MuleSoftOptionsPage muleSoftOptionsPage= new MuleSoftOptionsPage(driver);
 		muleSoftOptionsPage.APIManagerOptions();
 		APIManagerPage apiManagerPage=new APIManagerPage(driver);
 		apiManagerPage.APIManager();
 		AddAPIPage addAPIPage= new AddAPIPage(driver);
-		addAPIPage.NewAPI(NameAPI,VersionAPI);
+		addAPIPage.NewAPI(nameAPI,versionAPI);
 		APIConfigurationPage apiConfigurationPage=new APIConfigurationPage(driver);
 		apiConfigurationPage.DefineAPI();
 		APIDetailsPage apiDetailsPage= new APIDetailsPage(driver);
@@ -74,11 +77,11 @@ public class MuleSoftTest {
 	@Test(enabled=false)
 	public void EndPointConfigure() throws InterruptedException{
 		SignInPage signInPage= new SignInPage(driver); 
-		signInPage.signIn(UserName, Password);
+		signInPage.signIn(userName, password);
 		MuleSoftOptionsPage muleSoftOptionsPage= new MuleSoftOptionsPage(driver);
 		muleSoftOptionsPage.APIManagerOptions();
 		APIManagerPage apiManagerPage=new APIManagerPage(driver);
-		apiManagerPage.searchAPI(NameAPI,VersionAPI);
+		apiManagerPage.searchAPI(nameAPI,versionAPI);
 		APIConfigurationPage apiConfigurationPage=new APIConfigurationPage(driver);
 		apiConfigurationPage.EndPoint();
 		EndPointPage endPointPage=new EndPointPage(driver);
@@ -89,30 +92,30 @@ public class MuleSoftTest {
 	@Test(enabled=false)
 	public void APITest(){
 		TShirtOrdering tShirtOrdering=new TShirtOrdering();
-		tShirtOrdering.getTShirtCount("https://mocksvc.mulesoft.com/mocks/a99da2a5-3b9e-4a83-b0a4-bd25dedd98f2/");
+		tShirtOrdering.getTShirtCount(urlAPI);
 	}
 	
 	@Test
 	public void APITestEndtoEnd() throws InterruptedException{
 		SignInPage signInPage= new SignInPage(driver); 
-		signInPage.signIn(UserName, Password);
+		signInPage.signIn(userName, password);
 		MuleSoftOptionsPage muleSoftOptionsPage= new MuleSoftOptionsPage(driver);
 		muleSoftOptionsPage.APIManagerOptions();
 		APIManagerPage apiManagerPage=new APIManagerPage(driver);
 		apiManagerPage.APIManager();
 		AddAPIPage addAPIPage= new AddAPIPage(driver);
-		addAPIPage.NewAPI(NameAPI,VersionAPI);
+		addAPIPage.NewAPI(nameAPI,versionAPI);
 		APIConfigurationPage apiConfigurationPage=new APIConfigurationPage(driver);
 		apiConfigurationPage.DefineAPI();
 		APIDetailsPage apiDetailsPage= new APIDetailsPage(driver);
 		apiDetailsPage.APIDetail();
 		apiDetailsPage.APIAdministration();
-		apiManagerPage.searchAPI(NameAPI,VersionAPI);
+		apiManagerPage.searchAPI(nameAPI,versionAPI);
 		apiConfigurationPage.EndPoint();
 		EndPointPage endPointPage=new EndPointPage(driver);
-		urlAPI=endPointPage.EndPointConfigure();
+		urlAPInew=endPointPage.EndPointConfigure();
 		TShirtOrdering tShirtOrdering=new TShirtOrdering();
-		tShirtOrdering.getTShirtCount(urlAPI);
-		}*/
+		tShirtOrdering.getTShirtCount(urlAPInew);
+		}
 	
 }

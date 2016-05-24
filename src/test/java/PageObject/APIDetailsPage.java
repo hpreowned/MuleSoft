@@ -1,5 +1,7 @@
 package test.java.PageObject;
 
+import java.io.File;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -28,7 +30,7 @@ private WebDriver driver;
 	}
 	
 	private WebElement getOnButton(){
-		return driver.findElement(By.cssSelector(".field-wrapper"));//div.field.ng-scope
+		return driver.findElement(By.cssSelector(".field-wrapper"));
 	}
 	
 	private WebElement getSaveButton(){
@@ -53,7 +55,8 @@ private WebDriver driver;
 	
 	public boolean APIDetail() throws InterruptedException{
 		getImportRAML().click();
-		getFileRAML().sendKeys("C:\\Users\\lvivasa\\workspace\\MuleSoft\\api.raml");//("C:\\Users\\Liliana Vivas\\workspace\\MuleSoft\\api.raml");"C:\\Users\\lvivasa\\workspace\\MuleSoft\\api.raml");
+		File fichero = new File("api.raml");
+		getFileRAML().sendKeys(fichero.getAbsolutePath());
 		getImportButton().click();
 		getReplaceButton().click();
 		getSleep(1000);

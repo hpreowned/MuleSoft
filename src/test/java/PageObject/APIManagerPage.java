@@ -33,9 +33,14 @@ public class APIManagerPage {
 		return getTittle().getText();		
 	}
 	
-	public void searchAPI(String NameAPI,String Version){
+	private void getSleep(Integer time) throws InterruptedException{
+		Thread.sleep(time);
+	}
+	
+	public void searchAPI(String NameAPI,String Version) throws InterruptedException{
 		getSearchType().sendKeys(NameAPI);
 		getSearchType().sendKeys(Keys.ENTER);
+		getSleep(1000);
 		getVersionSelect(Version).click();
 	}
 

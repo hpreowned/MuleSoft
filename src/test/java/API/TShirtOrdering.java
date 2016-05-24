@@ -1,5 +1,8 @@
 package test.java.API;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -11,7 +14,7 @@ import test.java.Model.Product;
 
 public class TShirtOrdering {
 		
-	public void getTShirtCount(String urlAPI) {
+	public String getTShirtCount(String urlAPI) {
 		String urlToRequest = urlAPI+"/products";
 		
 		RestTemplate restTemplate = new RestTemplate();			  
@@ -26,13 +29,13 @@ public class TShirtOrdering {
 		ResponseEntity<Product[]> response = restTemplate.exchange(urlToRequest, HttpMethod.GET, httpEntity, Product[].class);
 		
 		Product[] products = response.getBody();
+		
+		List<String> sizes = new ArrayList<String>(); 
 				
 		for (Product product : products) {
-			System.out.println(product.getSize());
+			sizes.add(product.getSize());
 		}
-		
-		System.out.println(products);
-			  
+		return sizes.get(0); 
 	}
 }
 
