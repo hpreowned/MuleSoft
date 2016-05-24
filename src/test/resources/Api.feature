@@ -7,7 +7,7 @@ Scenario Outline: SingUp Test
  	 
  	Examples: Happy SingUP 
  		| fullName         | email	                    | telephone		| organization  |  userName    |  password    | profileInicial|
- 		| "Liliana Vivas"  | "lilianavivas@gmail.com"	| "3154519157"	| "PSL"         |  "lvivas23"  |  "Password2" |"LV"           |
+ 		| "Liliana Vivas"  | "lilianavivas@gmail.com"	| "3154519157"	| "PSL"         |  "lvivas24"  |  "Password2" |"LV"           |
 		
 
 Scenario Outline: APIAdd Test 
@@ -17,7 +17,7 @@ Scenario Outline: APIAdd Test
  	 
  	Examples: Happy APIAdd 
  		| userName       | password	    | APIName		| APIVersion    |  create      |
- 		| "lvivasa5"     | "Password2"	| "APINameAdd23"	| "APIVersion"  |  "true"  |		
+ 		| "lvivasa5"     | "Password2"	| "APINameAdd24"	| "APIVersion"  |  "true"  |		
 
 
 Scenario Outline: EndPointConfiguration Test 
@@ -47,4 +47,4 @@ Scenario Outline: APIEndToEnd Test
  	 
  	Examples: Happy APIEndToEnd
  		| userName       | password	    | APIName		| APIVersion    |  products|
- 		| "lvivasa5"     | "Password2"	| "APINameE2E23"| "APIVersion"  |  "S" 	   |
+ 		| "lvivasa5"     | "Password2"	| "APINameE2E24"| "APIVersion"  |  "S" 	   |
